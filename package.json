@@ -11,7 +11,7 @@
   "dependencies": {
     "socket.io": "^2.5.1"
   },
-  "devDependencies": {
+  "ksaDependencies": {
     "nodemon": "^1.19.4"
   },
   "repository": {
