@@ -21,6 +21,34 @@
       justify-content: center;
     }
 
+    #name-screen {
+      margin-top: 100px;
+      text-align: center;
+    }
+
+    #name-screen input {
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    #name-screen button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      margin-left: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    #chat-screen {
+      display: none;
+      width: 100%;
+    }
+
     #message-container {
       width: 80%;
       max-width: 1200px;
@@ -34,7 +62,6 @@
       margin: 8px 0;
       border-radius: 8px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-      transition: all 0.2s ease;
     }
 
     #message-container div:nth-child(2n) {
@@ -63,7 +90,6 @@
       border: 1px solid #ccc;
       border-radius: 6px;
       outline: none;
-      transition: border-color 0.2s ease;
     }
 
     #message-input:focus {
@@ -78,7 +104,6 @@
       border: none;
       border-radius: 6px;
       cursor: pointer;
-      transition: background-color 0.2s ease;
     }
 
     #send-button:hover {
@@ -87,10 +112,20 @@
   </style>
 </head>
 <body>
-  <div id="message-container"></div>
-  <form id="send-container">
-    <input type="text" id="message-input">
-    <button type="submit" id="send-button">Send</button>
-  </form>
+  <!-- Name Input -->
+  <div id="name-screen">
+    <h2>Enter your name:</h2>
+    <input type="text" id="name-input" placeholder="Your name..." />
+    <button onclick="joinChat()">Join Chat</button>
+  </div>
+
+  <!-- Chat Screen -->
+  <div id="chat-screen">
+    <div id="message-container"></div>
+    <form id="send-container">
+      <input type="text" id="message-input">
+      <button type="submit" id="send-button">Send</button>
+    </form>
+  </div>
 </body>
 </html>

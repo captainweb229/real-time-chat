@@ -3,9 +3,23 @@ const messageContainer = document.getElementById('message-container')
 const messageForm = document.getElementById('send-container')
 const messageInput = document.getElementById('message-input')
 
-const name = prompt('What is your name?')
-appendMessage('You joined')
-socket.emit('new-user', name)
+let name = ''
+
+function joinChat() {
+  const nameInput = document.getElementById('name-input').value.trim()
+  if (nameInput === '') {
+    alert('Please enter your name')
+    return
+  }
+
+  name = nameInput
+
+  document.getElementById('name-screen').style.display = 'none'
+  document.getElementById('chat-screen').style.display = 'block'
+
+  appendMessage('You joined')
+  socket.emit('new-user', name)
+}
 
 socket.on('chat-message', data => {
   appendMessage(`${data.name}: ${data.message}`)
@@ -31,4 +45,5 @@ function appendMessage(message) {
   const messageElement = document.createElement('div')
   messageElement.innerText = message
   messageContainer.append(messageElement)
+  messageContainer.scrollTop = messageContainer.scrollHeight // Auto-scroll
 }
