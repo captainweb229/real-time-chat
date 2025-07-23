@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "devStart": "nodemon server.js",
+    "ksaStart": "nodemon server.js",
     "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "socket.io": "^2.2.0"
+    "socket.io": "^2.5.1"
   },
   "devDependencies": {
     "nodemon": "^1.19.4"
