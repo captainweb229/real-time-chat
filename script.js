@@ -47,4 +47,9 @@ function appendMessage(message) {
   messageContainer.append(messageElement)
   messageContainer.scrollTop = messageContainer.scrollHeight // Auto-scroll
 }
-window.joinChat = joinChat;
+document.addEventListener('DOMContentLoaded', () => {
+  const joinBtn = document.getElementById('join-btn');
+  joinBtn.addEventListener('click', joinChat);
+});
+
+window.joinChat = joinChat; // Optional now, but still okay
