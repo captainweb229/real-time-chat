@@ -47,3 +47,4 @@ function appendMessage(message) {
   messageContainer.append(messageElement)
   messageContainer.scrollTop = messageContainer.scrollHeight // Auto-scroll
 }
+window.joinChat = joinChat;
